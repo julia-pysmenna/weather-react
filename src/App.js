@@ -5,18 +5,18 @@ import Search from "./Search";
 export default function App() {
   return (
     <div className="App">
-        <h1>Weather App</h1>
-        <Search />
-        <p>
-          <a
-            href="https://github.com/julia-pysmenna/weather-react"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open-source code
-          </a>{" "}
-          by Julia Pysmenna
-        </p>
+      <h1>Weather App</h1>
+      <Search />
+      <footer>
+        This projected was coded by Julia Pysmenna and is{" "}
+        <a
+          href="https://github.com/julia-pysmenna/weather-react"
+          target="_blank"
+          rel="noreferrer"
+        >
+          open-sourced on GitHub
+        </a>
+      </footer>
     </div>
   );
 }
