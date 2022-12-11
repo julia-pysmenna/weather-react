@@ -13,7 +13,8 @@
 }
 
 .Weather form {
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .Weather ul {
@@ -43,19 +44,15 @@
 }
 
 .Weather .unit {
-    bottom: 22px;
-    position: relative;
-    font-size: 18px;
+  bottom: 22px;
+  position: relative;
+  font-size: 18px;
 }
 
 .Weather img {
-  height: 50px;
+  height: 80px;
   margin: 0;
   position: relative;
   top: -10px;
-  width: 50px;
-}
-
-.Weather a {
-  text-decoration: none;
+  width: 80px;
 }
