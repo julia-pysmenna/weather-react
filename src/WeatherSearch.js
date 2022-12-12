@@ -2,6 +2,8 @@ import React from "react";
 
 import FormattedDate from "./FormattedDate";
 
+import WeatherTemperature from "./WeatherTemperature";
+
 export default function WeatherSearch(props) {
   return (
     <div className="WeatherSearch">
@@ -14,10 +16,7 @@ export default function WeatherSearch(props) {
       </ul>
       <div className="row">
         <div className="col-6 forecast-day">
-          <span className="temperature">
-            {Math.round(props.data.temperature)}
-          </span>
-          <span className="unit">°C</span>
+          <WeatherTemperature celsius={props.data.temperature} />
           <img src={props.data.icon} alt={props.data.description} id="icon" />
         </div>
         <div className="col-6">
