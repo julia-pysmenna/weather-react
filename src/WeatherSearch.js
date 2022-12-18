@@ -4,6 +4,8 @@ import FormattedDate from "./FormattedDate";
 
 import WeatherTemperature from "./WeatherTemperature";
 
+import WeatherIcon from "./WeatherIcon";
+
 export default function WeatherSearch(props) {
   return (
     <div className="WeatherSearch">
@@ -17,7 +19,7 @@ export default function WeatherSearch(props) {
       <div className="row">
         <div className="col-6 forecast-day">
           <WeatherTemperature celsius={props.data.temperature} />
-          <img src={props.data.icon} alt={props.data.description} id="icon" />
+          <WeatherIcon code={props.data.icon} alt={props.data.description} />
         </div>
         <div className="col-6">
           <ul>

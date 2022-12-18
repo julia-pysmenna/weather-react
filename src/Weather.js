@@ -11,25 +11,19 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
-  function showWeather(response) {
+  function handleResponse(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
       description: response.data.weather[0].description,
       temperature: response.data.main.temp,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       humidity: response.data.main.humidity,
       pressure: response.data.main.pressure,
       wind: response.data.wind.speed,
     });
-  }
-
-  function search() {
-    let apiKey = "745dc5780612f3ff28ed6a9ef9d290f3";
-    let units = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(showWeather);
   }
 
   function handleSubmit(event) {
@@ -39,6 +33,13 @@ export default function Weather(props) {
 
   function handleCityChange(event) {
     setCity(event.target.value);
+  }
+
+  function search() {
+    let apiKey = "745dc5780612f3ff28ed6a9ef9d290f3";
+    let units = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   if (weatherData.ready) {
@@ -53,7 +54,7 @@ export default function Weather(props) {
                 className="form-control"
                 autoFocus="on"
                 onChange={handleCityChange}
-              ></input>
+              />
             </div>
             <div className="col-3">
               <input
@@ -65,7 +66,7 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherSearch data={weatherData} />
-        <WeatherForecast />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {

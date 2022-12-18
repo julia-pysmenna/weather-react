@@ -39,7 +39,6 @@ export default function Search() {
   if (loaded) {
     return (
       <div>
-        {form}
         <ul>
           <li>Temperature: {Math.round(weather.temperature)}°C</li>
           <li>Description: {weather.description}</li>
@@ -52,6 +51,6 @@ export default function Search() {
       </div>
     );
   } else {
-    return form;
+    return "form";
   }
 }

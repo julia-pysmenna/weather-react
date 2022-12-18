@@ -2,7 +2,7 @@
   border: 1px solid #70757a;
   border-radius: 4px;
   font-family: "Poppins", sans-serif;
-  padding: 16px;
+  padding: 30px;
 }
 
 .Weather h1 {
@@ -44,17 +44,17 @@
 }
 
 .Weather .unit {
-  bottom: 22px;
+  bottom: 18px;
   left: 5px;
   position: relative;
   font-size: 18px;
 }
 
-.Weather img {
-  height: 80px;
+.Weather canvas {
+  height: 60px;
   margin: 0;
   position: relative;
-  bottom: 60px;
-  left: 80px;
-  width: 80px;
+  bottom: 50px;
+  left: 120px;
+  width: 60px;
 }
