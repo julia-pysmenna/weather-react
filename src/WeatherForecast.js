@@ -5,7 +5,6 @@ import "./WeatherForecast.css";
 import axios from "axios";
 
 import WeatherForecastDay from "./WeatherForecastDay";
-import { cleanup } from "@testing-library/react";
 
 export default function WeatherForecast(props) {
   let [loaded, setLoaded] = useState(false);
